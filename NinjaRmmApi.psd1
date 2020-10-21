@@ -18,7 +18,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 
 @{
 	RootModule = 'NinjaRmmApi.psm1'
-	ModuleVersion = '1.0.0'
+	ModuleVersion = '1.0.1'
 	CompatiblePSEditions = @('Desktop', 'Core')
 	PowerShellVersion = '5.1'
 	GUID = 'aaa3b5ab-8861-4ce4-b0aa-f2089dee9cf2'
@@ -46,18 +46,19 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 		'CHANGELOG.md',
 		'LICENSE',
 		'NEWS.md',
+		'NinjaRmmApi.png',
 		'NinjaRmmApi.psd1',
 		'NinjaRmmApi.psm1',
 		'README.md'
 	)
 	PrivateData = @{
 		PSData = @{
-			Tags = @('Ninja', 'NinjaRMM', 'RMM', 'API')
+			Tags = @('Ninja', 'NinjaRMM', 'RMM', 'API', 'computers', 'devices', 'alerts', 'customers')
 			LicenseUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/LICENSE'
 			ProjectUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/'
 			IconUri = 'https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png'
 			ReleaseNotes = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/NEWS'
-			# Prerelease = ''
+			Prerelease = '-git'
 			RequireLicenseAcceptance = $false
 		}
 	}
