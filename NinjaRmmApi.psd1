@@ -43,7 +43,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 	FileList = @(
 		'en-US/about_NinjaRmmApi.help.txt',
 		'en-US/NinjaRmmApi-help.xml',
-		'ChangeLog.md',
+		'CHANGELOG.md',
 		'LICENSE',
 		'NEWS.md',
 		'NinjaRmmApi.psd1',
