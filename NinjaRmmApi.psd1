@@ -55,7 +55,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 			Tags = @('Ninja', 'NinjaRMM', 'RMM', 'API')
 			LicenseUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/LICENSE'
 			ProjectUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/'
-			# IconUri = ''
+			IconUri = 'https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png'
 			ReleaseNotes = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/NEWS'
 			# Prerelease = ''
 			RequireLicenseAcceptance = $false
