@@ -1,0 +1,136 @@
+﻿TOPIC
+    about_NinjaRmmApi
+
+SHORT DESCRIPTION
+    A PowerShell module to interact with the NinjaRMM API.
+
+LONG DESCRIPTION
+    This PowerShell module allows you to interact with the NinjaRMM Public API.
+    This module implements version 0.1.2 of their API.
+
+Legal Disclaimers
+    This module is in NO WAY associated with, affiliated with, developed by, or
+    endorsed by NinjaRMM, LLC.
+
+    You also use this module at your own risk.  I am not responsible if running
+    NinjaRmmApi somehow breaks your NinjaRMM deployment, makes your lunch taste
+    bad, or otherwise ruins your day.
+
+Getting an API Key
+    To get started with this module, log into NinjaRMM, then click here:
+    https://app.ninjarmm.com/#/configuration/integrations/api
+
+    (Or, to get there yourself, log in and go to your dashboard. Then, click on
+    Configuration, Integrations, then API.)
+
+    Up in the top-right corner is a link that says "Generate API Key." Click it
+    and give your key a descriptive name.  Write down the access key ID and the
+    secret access key.  You will not the latter again!
+
+    Then, in your PowerShell session, call Set-NinjaRmmSecrets to store the API
+    information:
+
+    PS C:\> Set-NinjaRmmSecrets -AccessKeyID "TF4STGMDR4H7AEXAMPLE" `
+    >> -SecretAccessKey "eh14c4ngchhu6283he03j6o7ar2fcuca0example"
+
+    With that out of the way, it's time to do something actually fun.
+
+Getting Customers
+    You can look up customer information with the Get-NinjaRmmCustomers cmdlet.
+    With no arguments, it returns a list of all customers. You can also use the
+    -CustomerID parameter to fetch a specific customer.
+
+    The NinjaRMM API returns your results as native PowerShell objects. Because
+    of this, you can query and manipulate your data with native cmdlets such as
+    Format-List, Where-Object, and Select-Object (and of course, Out-GridView):
+
+    PS C:\> Get-NinjaRmmCustomers -CustomerID 42
+    
+    id name         description
+    -- ----         -----------
+    42 Deep Thought
+
+    PS C:\> (Get-NinjaRmmCustomers -CustomerID 42).name
+    
+    Deep Thought
+
+Getting Devices
+    You can get devices in the same manner, by using Get-NinjaRmmDevices:
+
+    PS C:\> $myComputer = Get-NinjaRmmDevices -DeviceID 528
+    PS C:\> $myComputer.System | Format-List
+    
+    manufacturer       : Hewlett-Packard
+    name               : RECEPTION-PC
+    model              : HP Z400 Workstation
+    dns_host_name      : Reception-PC
+    bios_serial_number : 2UA1234567
+    serial_number      : 2UA1234567
+    domain             : WORKGROUP
+
+Working with Alerts
+    You can get and reset alerts, too.  The syntax should look very familiar by
+    this point.
+
+    PS C:\> $alertsToReviewLater = Get-NinjaRmmAlerts -Since 3071641
+    
+    PS C:\> Reset-NinjaRmmAlert -AlertID 3071642
+
+EXAMPLES
+    A quick example session with NinjaRmmApi might look something like this:
+
+      PS C:\> Set-NinjaRmmSecrets -AccessKeyID $myKeyID -SecretAccessKey $mySAK
+      PS C:\> $alerts = Get-NinjaRmmAlerts
+      PS C:\> Reset-NinjaRmmSecrets
+
+    Firstly, we put the NinjaRMM API key information into memory.  Assume that,
+    for the sake of this example, those two variables contain your actual keys.
+
+    Then, you are able to run any of the cmdlets in this module.  The next line
+    saves all alerts to the variable $alerts, which you can work with later.
+
+    Finally, when you're finished making API calls, it is prudent to remove the
+    secrets from memory.
+
+NOTE
+    Your NinjaRMM API keys are stored in cleartext in the system's environment.
+    It is wholly possible that another process running on this system could see
+    your access key ID and secret access key. Thus, it is good practice to call
+    Reset-NinjaRmmSecrets when you are finished working.
+
+    This module does not store your API key information across sessions. If you
+    need long-term storage for your key material, consider saving it to a file,
+    copying and pasting it from a password manager, adding it to your $Profile,
+    or storing it with the SecretManagement module.
+
+TROUBLESHOOTING NOTE
+    This module does not do error checking. NinjaRMM's API will return an error
+    code to the error stream, but that cannot be tested easily. You may wish to
+    write your code like this:
+
+    $result = Get-NinjaRmmCustomer -CustomerId 42
+    If ($null -eq $result) { 
+        # something bad happened
+    } Else {
+        # do stuff
+    }
+
+SEE ALSO
+    To learn more about the cmdlets in this module, please read their help page
+    either in PowerShell (Get-Help) or online (Get-Help -Online).   This module
+    contains the following cmdlets:
+     - Get-NinjaRmmAlerts
+     - Get-NinjaRmmCustomers
+     - Get-NinjaRmmDevices
+     - Reset-NinjaRmmAlert
+     - Reset-NinjaRmmSecrets
+     - Set-NinjaRmmSecrets
+     - Set-NinjaRmmServerLocation
+
+    For more information about this module, please visit its GitHub page at:
+    https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/
+
+    To learn more about the NinjaRMM Public API, view the specification here:
+    https://www.ninjarmm.com/dev-api/
+    or: https://ninjaresources.s3.amazonaws.com/PublicApi/0.1.2/NinjaRMM%20Public%20API%20v0.1.2.pdf
+
