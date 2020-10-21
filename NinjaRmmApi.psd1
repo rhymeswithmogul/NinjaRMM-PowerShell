@@ -53,7 +53,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 	)
 	PrivateData = @{
 		PSData = @{
-			Tags = @('Ninja', 'NinjaRMM', 'RMM', 'API', 'computers', 'devices', 'alerts', 'customers')
+			Tags = @('Ninja', 'NinjaRMM', 'RMM', 'API', 'computers', 'devices', 'alerts', 'customers', 'REST', 'Windows', 'cloud', 'network', 'macOS')
 			LicenseUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/LICENSE'
 			ProjectUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/'
 			IconUri = 'https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png'
