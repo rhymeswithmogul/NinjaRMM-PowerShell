@@ -110,9 +110,15 @@ Function Send-NinjaRmmApi {
 	$UserAgent += "NinjaRmmApi/$((Get-Module -Name 'NinjaRmmApi').Version) "
 	$UserAgent += '(implementing API version 0.1.2)'
 
-	# PowerShell 5.1 and older do not use TLS 1.2 by default, which NinjaRMM
-	# requires.  Enable TLS 1.2 (and TLS 1.3, if supported by the host OS).
-	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls13
+	# Ensure that TLS 1.2 is enabled, so that we can communicate with NinjaRMM.
+	# It may be disabled by default before PowerShell 6.
+	[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+	# Some new versions of PowerShell also support TLS 1.3.  If that is a valid
+	# option, then enable that, too, in case NinjaRMM ever enables it.
+	If ([Net.SecurityProtocolType].GetMembers() -Contains 'Tls13') {
+		[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls13
+	}
 
 	# Finally, send it.
 	Write-Debug -Message ("Will send the request:`n`n" `
