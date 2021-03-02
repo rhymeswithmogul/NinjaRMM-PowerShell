@@ -1,3 +1,4 @@
+![NinjaRmmApi logo](https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png)
 # NinjaRmmApi
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/CODE_OF_CONDUCT.md) 
 
