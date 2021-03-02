@@ -18,12 +18,12 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 
 @{
 	RootModule = 'NinjaRmmApi.psm1'
-	ModuleVersion = '1.0.1'
+	ModuleVersion = '1.0.2'
 	CompatiblePSEditions = @('Desktop', 'Core')
 	PowerShellVersion = '5.1'
 	GUID = 'aaa3b5ab-8861-4ce4-b0aa-f2089dee9cf2'
 	Author = 'Colin Cogle'
-	Copyright = '(c) 2020 Colin Cogle. All rights reserved. Licensed under the AGPL version 3.'
+	Copyright = '(c) 2020-2021 Colin Cogle. All rights reserved. Licensed under the AGPL version 3.'
 	Description = 'An unofficial PowerShell module to interact with NinjaRMM.'
 	FunctionsToExport = @(
 		'Get-NinjaRmmAlerts',
@@ -58,7 +58,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 			ProjectUri = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/'
 			IconUri = 'https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png'
 			ReleaseNotes = 'https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/NEWS'
-			Prerelease = '-git'
+			Prerelease = ''
 			RequireLicenseAcceptance = $false
 		}
 	}
