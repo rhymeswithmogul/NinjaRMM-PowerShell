@@ -1,3 +1,6 @@
+# LOOKING FOR A NEW MAINTAINER
+I've changed jobs, and I no longer have access to NinjaRMM.  If anyone wants to take over this project, please let me know!  Or just fork it and do your thing.  You have my full support.  This repo and module will remain for historical purposes.
+
 ![NinjaRmmApi logo](https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png)
 # NinjaRmmApi
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/rhymeswithmogul/NinjaRMM-PowerShell/blob/main/CODE_OF_CONDUCT.md) 
