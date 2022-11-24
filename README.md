@@ -1,5 +1,7 @@
-# LOOKING FOR A NEW MAINTAINER
-I've changed jobs, and I no longer have access to NinjaRMM.  If anyone wants to take over this project, please let me know!  Or just fork it and do your thing.  You have my full support.  This repo and module will remain for historical purposes.
+# THIS PROJECT IS DEAD, BUT YOU CAN STILL FORK IT
+I've changed jobs, and I no longer have access to NinjaRMM.  This module implemented version 0.x of the API, which I'm told is long dead.  Fork this project and keep it alive!  This repo and module will remain for historical purposes.
+
+<hr>
 
 ![NinjaRmmApi logo](https://raw.githubusercontent.com/rhymeswithmogul/NinjaRMM-PowerShell/main/NinjaRmmApi.png)
 # NinjaRmmApi
